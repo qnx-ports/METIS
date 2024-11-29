@@ -1,3 +1,7 @@
 if(METIS_INSTALL)
-  install(FILES metis.h DESTINATION include)
+  if(QNX)
+    install(FILES metis.h DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+  else()
+    install(FILES metis.h DESTINATION include)
+  endif()
 endif()
